@@ -9,7 +9,7 @@ The data that is displayed consists of 2 ground speed sensor, wheel encoders dat
 This script listens for connections. When a connection is made it starts receiving and displaying data. The IP of the machine has to be entered to create a socket aswell as a suitable port.
 
 Transmitter.py
-This script is responsible for transmitting the values previously mentioned to the receiver.py script. This script using websockets to accomplish this. The IP and port of the receiving party have to be entered. The script generates mock data to simulate the real data coming in. The real data has to be wrapped in a JSON object. These values can then be sent to the receiver.py script.
+This script is responsible for transmitting the values previously mentioned to the receiver.py script. This script using websockets to accomplish this. The IP and port of the receiving party have to be entered. The script generates mock data to simulate the real data coming in. The real data has to be wrapped in a JSON object. These values can then be sent to the receiver.py script. The ZeroTier IP from the receiving PC needs to be entered in this script aswell as the same port as defined in the receiving script.
 
 4G Modem/Router
 The 4G Modem/Router is responsible for providing internet access to the car to send the values to a PC at the side of the track. This PC at the side of the track also requires internet access.
