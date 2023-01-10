@@ -2,7 +2,7 @@ from socketserver import StreamRequestHandler, TCPServer
 import json
 
 
-IP = '127.0.0.1'
+IP = '127.0.0.1' #Server IP. This needs to be the ZeroTier IP of the PC that runs the script
 PORT = 5000
 
 def print_data(data: bytes) -> None:

@@ -4,7 +4,7 @@ import json
 from time import time, sleep
 from typing import Dict, Any
 
-IP = "172.27.63.138"
+IP = "172.27.63.138" #IP from the RECEIVING PC
 PORT = 5000
 
 
