@@ -21,3 +21,4 @@ Since there was no physical access to the radio that needs to be used for the co
 
 ## CONLCUSION/DISCUSSION
 A script which is capable of intepreting the messages that are sent from the RES Radio over a CAN bus has been written. This script currently does not call a function which activates the E-Break or activates the Self driving program because the code for this does not exist yet. Two functions have been created where this functionality can be implemented. For now all that happens are simple print statements.
+More details about the code can be found within the Google Drive in the document RES Documentation.
