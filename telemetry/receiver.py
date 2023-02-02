@@ -1,13 +1,20 @@
 from socketserver import StreamRequestHandler, TCPServer
 import json
+import datetime
 
 
 IP = '127.0.0.1' #Server IP. This needs to be the ZeroTier IP of the PC that runs the script
 PORT = 5000
 
+logs = open("MyFile.txt", "w")
+
 def print_data(data: bytes) -> None:
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d, %H:%M:%S")
     data = json.loads(data)
     print(data)
+    logs.write(current_time + ": ")
+    logs.write(str(data))
+    logs.write("\n")
 
 # This class handles receiving JSON packets from the transmitter and calls print_data
 class DumpHandler(StreamRequestHandler):
@@ -22,6 +29,7 @@ class DumpHandler(StreamRequestHandler):
                 print_data(data)
         finally:
             print('disconnected from {}:{}'.format(*self.client_address))
+            logs.close()
 
 def main() -> None:
     server_address = (IP, PORT)

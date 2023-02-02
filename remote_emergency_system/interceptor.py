@@ -9,8 +9,8 @@ def set_operational():
 	except:
 		print("Message not sent")
 
-def ebreak():
-	print("Ebreak is pulled")
+def emergency_brake():
+	print("E-Brake is pulled")
 
 def start_self_driving():
 	if(!driving_state):
@@ -38,7 +38,7 @@ while True:
 		set_operational()
 	if(msg.arbitration_id == 0x180):
 		if(bin(msg.data[0])[2] == "1"):
-			ebreak()
+			emergency_brake()
 		#K2 switch. for K3 change to 2	
 		if(bin(msg.data[0])[3] == "1"):
 			start_self_driving()
