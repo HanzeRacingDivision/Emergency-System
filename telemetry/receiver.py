@@ -3,7 +3,7 @@ import json
 import datetime
 
 
-IP = '127.0.0.1' #Server IP. This needs to be the ZeroTier IP of the PC that runs the script
+IP = '172.27.63.138' #Server IP. This needs to be the ZeroTier IP of the PC that runs the script
 PORT = 5000
 
 logs = open("MyFile.txt", "w")

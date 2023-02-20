@@ -9,11 +9,12 @@ def set_operational():
 	except:
 		print("Message not sent")
 
+#This should trigger the shutdown circuit!
 def emergency_brake():
 	print("E-Brake is pulled")
 
 def start_self_driving():
-	if(!driving_state):
+	if(not driving_state):
 		print("The car will start self driving program")
 	else:
 		print("The car is ready")
@@ -34,7 +35,7 @@ while True:
 	msg = bus.recv()
 	#Arbritration ID is without Node ID. Make sure to add the Node ID from the radio to the arbitration_id.
 	#So if the radio has Node ID = 1 then arbitration_id needs to be 0x701
-	if(msg.arbitration_id == 0x700):
+	if(msg.arbitration_id == 0x711):
 		set_operational()
 	if(msg.arbitration_id == 0x180):
 		if(bin(msg.data[0])[2] == "1"):
